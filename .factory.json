@@ -1,64 +1,15 @@
 {
   "v": "4.0",
   "name": "che-codenvy-docs",
-  "workspace": {
-    "defaultEnv": "default",
-    "environments": {
-      "default": {
-        "machines": {
-          "dev-machine": {
-            "attributes": {
-              "memoryLimitBytes": "3221225472"
-            },
-            "servers": {},
-            "agents": [
-              "org.eclipse.che.terminal",
-              "org.eclipse.che.ws-agent",
-              "org.eclipse.che.ssh"
-            ]
-          }
-        },
-        "recipe": {
-          "type": "compose",
-          "content": "services:\n  dev-machine:\n    image: jdrummond/ubuntu_jekyll\n",
-          "contentType": "application/x-yaml"
-        }
-      }
-    },
+  "devfile": {
+    "apiVersion": "1.0",
     "projects": [
       {
-        "links": [],
         "name": "che-docs",
-        "attributes": {},
-        "type": "blank",
         "source": {
           "location": "https://github.com/eclipse/che-docs.git",
-          "type": "git",
-          "parameters": {}
-        },
-        "path": "/che-docs",
-        "description": "Che documentation generated via jekyll.",
-        "problems": [],
-        "mixins": [
-          "pullrequest"
-        ]
-      },
-      {
-        "links": [],
-        "name": "codenvy-docs",
-        "attributes": {},
-        "type": "blank",
-        "source": {
-          "location": "https://github.com/codenvy/docs.git",
-          "type": "git",
-          "parameters": {}
-        },
-        "path": "/codenvy-docs",
-        "description": "Codenvy documentation generated via jekyll.",
-        "problems": [],
-        "mixins": [
-          "pullrequest"
-        ]
+          "type": "git"
+        }
       }
     ]
   }  
